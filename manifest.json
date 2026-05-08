@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Focus Karaoke",
+  "version": "1.0",
+  "description": "Pomodoro timer with karaoke breaks — sing to end your break!",
+  "permissions": ["alarms", "storage", "tabs"],
+  "host_permissions": ["*://www.youtube.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/watch*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_end"
+    }
+  ]
+}

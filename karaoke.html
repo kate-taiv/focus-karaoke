@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Karaoke Break — Focus Karaoke</title>
+  <link rel="stylesheet" href="karaoke.css">
+</head>
+<body>
+  <div id="header">
+    <h1>🎤 Karaoke Break</h1>
+    <p id="subtitle">Sing along to end your break!</p>
+  </div>
+
+  <div id="video-wrap">
+    <iframe
+      id="yt"
+      allow="autoplay; encrypted-media"
+      allowfullscreen
+    ></iframe>
+  </div>
+
+  <div id="mic-section">
+    <div id="mic-status">Click to enable microphone</div>
+    <div id="progress-wrap">
+      <div id="progress-bar"></div>
+    </div>
+    <div id="progress-label">0 / 30 seconds of singing</div>
+    <button id="mic-btn">🎤 Enable Mic</button>
+  </div>
+
+  <script src="karaoke.js"></script>
+</body>
+</html>

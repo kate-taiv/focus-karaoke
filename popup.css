@@ -1,0 +1,120 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 240px;
+  background: #0f0f1a;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 24px 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 18px;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+
+#mode-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+#mode-label.work     { color: #6ee7b7; }
+#mode-label.paused   { color: #94a3b8; }
+#mode-label.break    { color: #f9a8d4; }
+#mode-label.success  { color: #fde68a; }
+#mode-label.complete { color: #a78bfa; }
+
+#timer {
+  font-size: 52px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+#session-label {
+  font-size: 12px;
+  color: #555;
+  min-height: 16px;
+  margin-bottom: 4px;
+}
+
+#success-msg {
+  font-size: 12px;
+  color: #fde68a;
+  min-height: 16px;
+  margin-bottom: 12px;
+}
+
+#settings {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 16px;
+  font-size: 12px;
+  color: #666;
+}
+
+#settings label { color: #555; }
+#settings-divider { color: #333; }
+
+#work-input,
+#sessions-input {
+  width: 48px;
+  padding: 4px 6px;
+  background: #1a1a2e;
+  border: 1px solid #333;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 13px;
+  text-align: center;
+}
+
+#work-input:focus,
+#sessions-input:focus {
+  outline: none;
+  border-color: #6ee7b7;
+}
+
+#settings.hidden { display: none; }
+
+#main-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  background: #6ee7b7;
+  color: #0f0f1a;
+  transition: opacity 0.15s;
+}
+
+#main-btn:hover { opacity: 0.85; }
+#main-btn.stop   { background: #f87171; color: #fff; }
+#main-btn:disabled { opacity: 0.4; cursor: default; }
+
+#leave-btn {
+  display: none;
+  width: 100%;
+  margin-top: 8px;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  background: transparent;
+  color: #555;
+  transition: color 0.15s;
+}
+
+#leave-btn:hover { color: #f87171; }
+#leave-btn.visible { display: block; }

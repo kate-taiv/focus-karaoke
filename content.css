@@ -1,0 +1,95 @@
+#fk-panel {
+  all: initial;
+  position: fixed !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 99999 !important;
+  background: rgba(10, 10, 20, 0.95) !important;
+  backdrop-filter: blur(8px) !important;
+  border-top: 1px solid #333 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 24px !important;
+  padding: 16px 32px !important;
+  font-family: 'Segoe UI', sans-serif !important;
+  box-sizing: border-box !important;
+}
+
+#fk-panel * {
+  box-sizing: border-box !important;
+  font-family: 'Segoe UI', sans-serif !important;
+}
+
+#fk-left {
+  flex: 0 0 auto !important;
+  min-width: 220px !important;
+}
+
+#fk-label {
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: 2px !important;
+  color: #f9a8d4 !important;
+  margin-bottom: 4px !important;
+}
+
+#fk-title {
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  color: #fff !important;
+  margin-bottom: 4px !important;
+}
+
+#fk-status {
+  font-size: 12px !important;
+  color: #6ee7b7 !important;
+}
+
+#fk-center {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 6px !important;
+}
+
+#fk-progress-wrap {
+  width: 100% !important;
+  height: 10px !important;
+  background: #2a2a3e !important;
+  border-radius: 5px !important;
+  overflow: hidden !important;
+}
+
+#fk-progress-bar {
+  height: 100% !important;
+  width: 0% !important;
+  background: linear-gradient(90deg, #6ee7b7, #f9a8d4) !important;
+  border-radius: 5px !important;
+  transition: width 0.3s ease !important;
+}
+
+#fk-progress-label {
+  font-size: 11px !important;
+  color: #666 !important;
+  text-align: center !important;
+}
+
+#fk-right {
+  flex: 0 0 auto !important;
+}
+
+#fk-mic-btn {
+  all: unset !important;
+  padding: 10px 24px !important;
+  background: #6ee7b7 !important;
+  color: #0f0f1a !important;
+  border-radius: 8px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  white-space: nowrap !important;
+}
+
+#fk-mic-btn:hover { opacity: 0.85 !important; }
+#fk-mic-btn:disabled { opacity: 0.4 !important; cursor: default !important; }

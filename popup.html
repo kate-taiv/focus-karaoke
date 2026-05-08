@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Focus Karaoke</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div id="app">
+    <h1>🎤 Focus Karaoke</h1>
+    <div id="mode-label">Ready</div>
+    <div id="timer">25:00</div>
+    <div id="session-label"></div>
+    <div id="success-msg"></div>
+    <div id="settings">
+      <label for="work-input">Work</label>
+      <input id="work-input" type="number" min="1" max="120" value="25">
+      <span>min</span>
+      <span id="settings-divider">·</span>
+      <label for="sessions-input">Sessions</label>
+      <input id="sessions-input" type="number" min="1" max="20" value="4">
+    </div>
+    <button id="main-btn">Start Focus</button>
+    <button id="leave-btn">Leave Focus</button>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

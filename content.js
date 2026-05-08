@@ -1,5 +1,5 @@
-const SING_THRESHOLD = 0.01; // TEST: any noise counts
-const GOAL_SECONDS = 3;      // TEST: 3 seconds to complete
+const SING_THRESHOLD = 0.05;
+const GOAL_SECONDS = 30;
 
 (async () => {
   const { karaokeBreak } = await chrome.storage.local.get('karaokeBreak');

@@ -9,10 +9,86 @@ body {
   text-align: center;
 }
 
+#app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
 h1 {
   font-size: 18px;
-  margin-bottom: 16px;
   letter-spacing: 0.5px;
+}
+
+#stats-btn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.15s;
+  padding: 2px;
+}
+
+#stats-btn:hover { opacity: 1; }
+
+/* Stats view */
+.hidden { display: none !important; }
+
+#stats-view {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#stats-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#stats-back-btn {
+  background: none;
+  border: none;
+  color: #6ee7b7;
+  font-size: 13px;
+  cursor: pointer;
+  padding: 0;
+}
+
+#stats-back-btn:hover { opacity: 0.75; }
+
+#stats-header h2 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+#stats-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  background: #1a1a2e;
+  border-radius: 8px;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: #888;
+}
+
+.stat-value {
+  font-size: 20px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: #fff;
 }
 
 #mode-label {
@@ -53,18 +129,25 @@ h1 {
 
 #settings {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 6px;
+  gap: 8px;
   margin-bottom: 16px;
   font-size: 12px;
   color: #666;
 }
 
-#settings label { color: #555; }
-#settings-divider { color: #333; }
+.settings-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.settings-row label { color: #555; }
 
 #work-input,
+#work-seconds-input,
 #sessions-input {
   width: 48px;
   padding: 4px 6px;
@@ -77,6 +160,7 @@ h1 {
 }
 
 #work-input:focus,
+#work-seconds-input:focus,
 #sessions-input:focus {
   outline: none;
   border-color: #6ee7b7;

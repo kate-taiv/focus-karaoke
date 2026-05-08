@@ -17,7 +17,10 @@ chrome.alarms.onAlarm.addListener(async (alarm) => {
   if (alarm.name !== 'workEnd') return;
   const state = await getState();
 
+  await addStats({ sessions: 1, focusMs: state.duration });
+
   if (state.totalSessions && state.session >= state.totalSessions) {
+    await addStats({ blocks: 1 });
     await setState({ ...state, mode: 'complete' });
     return;
   }
@@ -28,6 +31,11 @@ chrome.alarms.onAlarm.addListener(async (alarm) => {
   chrome.tabs.create({ url: `https://www.youtube.com/watch?v=${video.id}` });
 });
 
+async function addStats({ sessions = 0, blocks = 0, focusMs = 0 }) {
+  const s = await new Promise(r => chrome.storage.local.get('stats', d => r(d.stats || { sessions: 0, blocks: 0, focusMs: 0 })));
+  await new Promise(r => chrome.storage.local.set({ stats: { sessions: s.sessions + sessions, blocks: s.blocks + blocks, focusMs: s.focusMs + focusMs } }, r));
+}
+
 chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
   handle(msg, sender).then(sendResponse);
   return true;
@@ -35,7 +43,7 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
 
 async function handle(msg, sender) {
   if (msg.type === 'START') {
-    const workMs = (msg.workMinutes || 25) * 60 * 1000;
+    const workMs = Math.max(1000, ((msg.workMinutes ?? 25) * 60 + (msg.workSeconds ?? 0)) * 1000);
     await setState({ mode: 'work', startTime: Date.now(), duration: workMs, session: 1, totalSessions: msg.totalSessions || 0 });
     chrome.alarms.create('workEnd', { when: Date.now() + workMs });
     return { ok: true };
